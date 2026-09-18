@@ -1,0 +1,398 @@
+/* 色はここだけで決める。明るい画面と暗い画面の両方をここで切り替える */
+:root {
+  --bg: #faf6ee;
+  --surface: #ffffff;
+  --alt: #f3ecdf;
+  --text: #2b2520;
+  --muted: #6b6158;
+  --line: #e4d9c8;
+  --accent: #94550f;
+  --yellow: #f2c230;
+  --on-yellow: #2b2520;
+  --deep: #2f6f8f;
+  --claude: #b85a3a;
+  --anti: #3b6fd8;
+  --zunda: #4e8a35;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1915;
+    --surface: #26211c;
+    --alt: #231e19;
+    --text: #f1e9de;
+    --muted: #b9ad9f;
+    --line: #3d352d;
+    --accent: #f0b54a;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #1d1915;
+  --surface: #26211c;
+  --alt: #231e19;
+  --text: #f1e9de;
+  --muted: #b9ad9f;
+  --line: #3d352d;
+  --accent: #f0b54a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "BIZ UDPGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  font-size: 18px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+iframe:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.prose {
+  max-width: 720px;
+}
+
+/* 頭の帯 */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+/* 最初に目に入るところ */
+.hero {
+  padding: 56px 0 24px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 2px 14px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--on-yellow);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 5.2vw, 3rem);
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+.lead {
+  max-width: 720px;
+  margin: 0 0 28px;
+  font-size: 1.1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  background: var(--yellow);
+  color: var(--on-yellow);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-ghost {
+  border: 2px solid var(--line);
+  color: var(--text);
+  background: var(--surface);
+}
+
+.btn-ghost:hover {
+  border-color: var(--muted);
+}
+
+.hero-figure {
+  margin: 0;
+}
+
+.hero-figure img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+/* 各節 */
+.section {
+  padding: 64px 0;
+}
+
+.section-alt {
+  background: var(--alt);
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: clamp(1.4rem, 3.4vw, 1.8rem);
+  line-height: 1.5;
+  padding-left: 16px;
+  border-left: 6px solid var(--yellow);
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.guide {
+  margin: 24px 0 16px;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.guide-title {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.guide ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.note-small {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* note の記事カード。高さは note の台本が中身に合わせて直す */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  align-items: start;
+  gap: 20px;
+  margin: 8px 0 32px;
+}
+
+.note-embed {
+  display: block;
+  width: 100%;
+  max-width: 494px;
+  margin: 0 auto;
+  border: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* 登場するAIたち */
+.cast {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cast-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.cast-item p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.badge-deep { background: var(--deep); }
+.badge-claude { background: var(--claude); }
+.badge-anti { background: var(--anti); }
+.badge-zunda { background: var(--zunda); }
+
+/* リンク */
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.links a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.links a:hover {
+  border-color: var(--muted);
+}
+
+.link-name {
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 7em;
+}
+
+.link-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* 足もと */
+.site-footer {
+  padding: 36px 0 48px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+.site-footer p {
+  margin: 0 0 4px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cast {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+
+  .wrap {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding-top: 36px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

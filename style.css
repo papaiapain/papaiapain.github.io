@@ -382,6 +382,16 @@ p {
   color: var(--muted);
 }
 
+/* 見てくれた回数のカウンター。数える外のサービスは hits.sh */
+.site-footer .counter {
+  margin: 12px 0 8px;
+}
+
+.counter img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 @media (max-width: 760px) {
   .cards {
     grid-template-columns: minmax(0, 1fr);

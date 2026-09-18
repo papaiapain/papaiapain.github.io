@@ -382,7 +382,7 @@ p {
   color: var(--muted);
 }
 
-/* 見てくれた回数のカウンター。数える外のサービスは hits.sh */
+/* 見てくれた回数のカウンター。数える外のサービスは visitorbadge.io（hits.sh は本人のエッジで止められた） */
 .site-footer .counter {
   margin: 12px 0 8px;
 }

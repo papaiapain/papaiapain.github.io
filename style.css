@@ -197,6 +197,13 @@ h1 {
   border: 1px solid var(--line);
 }
 
+.hero-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
 /* 各節 */
 .section {
   padding: 64px 0;
@@ -284,6 +291,10 @@ p {
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.7;
+}
+
+.cast-manga {
+  margin-top: 28px;
 }
 
 /* 登場するAIたち */
